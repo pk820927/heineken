@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heineken</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="first_cut">
+      <div class="slot_machine">
+        <div id="left" class="left item">
+          <img class="first_bedroom" src="./images/inhouse1_left.jpg" alt="">
+          <img style="margin-top: -3px;" class="second_bedroom" src="./images/beach.jpg" alt="">
+          <img style="margin-top: -3px;" class="third_bedroom" src="./images/inhouse1_right.jpg" alt="">
+        </div>
+        <div class="middle item">
+          <img class="first_bar" src="./images/inhouse2_left.jpg" alt="">
+          <img style="margin-top: -3px;" class="second_bar" src="./images/bar.jpg" alt="">
+          <img style="margin-top: -3px;" class="third_bar" src="./images/inhouse2_right.jpg" alt="">
+        </div>
+        <div class="right item">
+          <img class="third_product" src="./images/heineken_can.jpg" alt="">          
+        </div>
+      </div>
+      <img class="heineken_logo" src="./images/heineken_logo.png" alt="">
+      <img class="warning_banner first_warning" src="./images/warning1.jpg" alt="">
+      <img class="living_room" src="./images/living_room1.jpg" alt="">
+    </div>    
+    <div class="second_cut">
+      <video class="demo_video" preload="auto" loop muted autoplay playsinline>
+        <source src="./images/videos.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <img style="z-index: 9;" class="living_room" src="./images/living_room1.jpg" alt="">
+      <img class="key_product" src="./images/key_product.jpg" alt="">
+      <button onclick="openUrl()" class="link_btn"></button>
+      <div class="second_warning">
+        <img src="./images/warning1.jpg" alt="">
+      </div>      
+    </div>
+  </div> 
+</body>
+<script>
+  const labar = function(sec){
+    return new Promise(function(resolve,reject){
+      setTimeout(resolve, sec); 
+    });
+  };
+
+  labar().then(function(){
+    return labar(2000);
+  }).then(function(){
+    TweenMax.to(".first_bedroom", 1, {yPercent: -100});
+    TweenMax.to(".second_bedroom", 1, {yPercent: -100});
+    TweenMax.to(".third_bedroom", 1, {yPercent: -100});
+    return labar(1000);
+  }).then(function(){
+    TweenMax.to(".first_bar", 1, {yPercent: -100});
+    TweenMax.to(".second_bar", 1, {yPercent: -100});
+    TweenMax.to(".third_bar", 1, {yPercent: -100});
+    return labar(1000);
+  }).then(function(){
+    TweenMax.to(".second_bedroom", 1, {yPercent: -201});
+    TweenMax.to(".third_bedroom", 1, {yPercent: -201});
+    return labar(1000);
+  })
+  .then(function(){
+    TweenMax.to(".second_bar", 1, {yPercent: -201});
+    TweenMax.to(".third_bar", 1, {yPercent: -201});
+    return labar(1000);
+  })
+  .then(function(){  
+    TweenMax.to(".living_room", 1, {opacity: 1});
+    TweenMax.to(".living_room", 0.5, {scale: 1.517, xPercent: 24.8, yPercent: 19.5});
+    return labar(1200);
+  }).then(function(){
+    document.getElementsByClassName('first_cut')[0].style.display = 'none';
+    TweenMax.to(".second_cut", 0.5, {opacity: 1});
+    TweenMax.to(".living_room", 1, {opacity: 0});
+    TweenMax.to(".living_room", 1, {scale: 0.5, xPercent: 25, yPercent: 70});
+  })
+
+  function openUrl(){
+    parent.postMessage({type:"html5-click"}, "*");
+    window.open('https://lin.ee/AWJZYYb');
+  }
+</script>
+</html>

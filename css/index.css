@@ -1,0 +1,159 @@
+.wrapper {
+  position: fixed;
+  width: 640px;
+  height: 960px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}
+
+.first_cut {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  top: 0%;
+  background: url(../images/ad_bg.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.first_cut img{
+  width: 100%;
+}
+
+.slot_machine {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.heineken_logo {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, 50%);
+  width: 38% !important;
+}
+
+.item {
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+}
+
+.item img {
+  height: 300px;
+}
+
+.left_item {
+  width: 30.3%;
+}
+
+.middle_item {
+  width: 33.3%;
+}
+
+.right_item {
+  width: 33.7%;
+}
+
+.living_room {
+  position: absolute;
+  width: 66% !important;
+  transform: translate(1%, -51%);
+  left: 0;
+  top: 39%;
+  opacity: 0;
+}
+
+.warning_banner {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: 0;
+}
+
+.second_warning {
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: 0%;
+  width: 100%;
+}
+.second_warning img {
+  width: 100%;
+}
+
+.second_cut {
+  opacity: 0;
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  transform: translate(-50%, 50%);
+  left: 50%;
+  top: 0%;
+  /* background: url(../images/key_product.jpg) no-repeat;
+  background-position: center 85%;
+  background-size: contain; */
+}
+
+.key_text {
+  position: absolute;
+  top: 70%;
+  left: 0;
+}
+
+.key_product {
+  width: 100%;
+  position: absolute;
+  transform: translate(-50%, 0%);
+  top: 40%;
+  left: 50%;
+}
+
+.demo_video {
+  width: 100%;
+  height: 44%;
+  background-color: #000;
+}
+
+.link_btn {
+  width: 40%;
+  height: 10%;
+  position: absolute;
+  left: 55%;
+  bottom: 30%;
+  transform: translate(-50%, 0);
+  opacity: 0;
+  z-index: 9;
+}
+
+.link_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* @media (max-width: 576px) {
+  .wrapper {
+    background: none;
+  }
+  .first_cut {
+    background: url(../images/ad_bg.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .second_cut {
+    background: url(../images/ad_bg.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+} */
